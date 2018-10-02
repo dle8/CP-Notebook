@@ -23,3 +23,6 @@ long eulerPhi(long n) {
 }
 
 
+/*
+Tested: https://www.spoj.com/problems/ETF/
+*/
