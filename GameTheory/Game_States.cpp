@@ -8,6 +8,11 @@ Created: 04/10/2018
 Given m queries, each queries contains the number of coins the table. For each queries, output whether who will win no matter which moves
 the other will take. If A wins, output 'A', else ouput 'B' if B wins.*/
 
+/*
+Tested:
+https://www.spoj.com/problems/MCOINS/
+*/
+
 #include <bits/stdc++.h>
 #define FOR(i, l, r) for (int i=l; i<=r; i++)
 #define REP(i, r, l) for (int i=r; i>=l; i--)
