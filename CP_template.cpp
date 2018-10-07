@@ -29,6 +29,7 @@ struct strLine { ld a, b, c; };
 typedef vector<int> vi;
 typedef vector<long> vl;
 typedef vector<ll> vll;
+typedef vector<ld> vld;
 
 int main() {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
