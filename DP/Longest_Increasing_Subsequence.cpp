@@ -9,8 +9,7 @@ https://www.spoj.com/problems/LIS/
 */
 
 /*
-Given a weight w and n objects. Each objects i has weight w[i] and value v[i]. Pick subset of objects from the given n objects that
-their total weight does not exceed w and their total value is maximized.
+Given an unsorted array of integers, find the length of longest increasing subsequence.
 */
 
 #include <bits/stdc++.h>
