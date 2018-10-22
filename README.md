@@ -11,6 +11,7 @@ These are the essential algorithms and data structures
 * Sorting and Searching
 * Strings
 * Trees
+* Bit Manipulation
 * Other special algorithms  
 
 ## Problems and Solutions
