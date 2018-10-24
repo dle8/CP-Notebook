@@ -10,6 +10,10 @@
   ancestor nodes whose ranges completely contains [l, r] instead of continuing going down into other nodes below.
 */
 
+/*
+  Tested: https://vn.spoj.com/problems/QMAX2/
+*/
+
 #define maxn 1000 + 10
 #define oo 1e9
 
