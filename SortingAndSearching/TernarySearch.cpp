@@ -25,6 +25,6 @@ double TernarySearch() {
     if (f(x1) > f(x2)) r = x2;
     else l = x1;
   }
-  
+
   return f(l);
 }
