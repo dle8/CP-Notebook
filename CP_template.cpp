@@ -33,7 +33,18 @@ typedef vector<ll> vll;
 
 const double pi = 3.141592653589793;
 
-ll gcd(ll a, ll b) { return (b==0)?a:gcd(b, a%b); } 
+ll gcd(ll a, ll b, ll &x, ll &y) {
+    if (a == 0) {
+        x = 0; y = 1;
+        return b;
+    }
+    ll x1, y1;
+    ll d = gcd(b%a, a, x1, y1);
+    x = y1 - (b / a) * x1;
+    y = x1;
+    return d;
+}
+
 ll lcm(ll a, ll b) { return (a*b)/gcd(a, b); }
 ll max(ll a, ll b) { return (a>=b)?a:b; }
 ll min(ll a, ll b) { return (a<=b)?a:b; }
