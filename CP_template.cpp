@@ -45,7 +45,7 @@ ll gcd(ll a, ll b, ll &x, ll &y) {
     return d;
 }
 
-ll lcm(ll a, ll b) { return (a*b)/gcd(a, b); }
+ll lcm(ll a, ll b) { return (a*b)/__gcd(a, b); }
 ll max(ll a, ll b) { return (a>=b)?a:b; }
 ll min(ll a, ll b) { return (a<=b)?a:b; }
 
