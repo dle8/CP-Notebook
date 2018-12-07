@@ -55,6 +55,10 @@ long LCA(long u, long v) {//find the LCA between u & v
 	return tnext[u][0];
 }
 
+long distanceBetween(long u, long v) {
+	return height[u] + height[v] - 2 * height[lca(u, v)];
+}
+
 void clr(node* p) {
 	if (p->next!=nullptr) clr(p->next);
 	delete p;
