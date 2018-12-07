@@ -1,3 +1,13 @@
+/*
+  Author: Dung Tuan Le
+  University of Rochester
+  Created: 12/6/2018
+*/
+
+/*
+  Counts number of subgrird whose all corners are black.
+*/
+
 #include <bits/stdc++.h>
 #define FOR(i, l, r) for (int i = l; i <= r; i++)
 using namespace std;
