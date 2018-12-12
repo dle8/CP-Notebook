@@ -21,8 +21,7 @@ Bit manipulation
 
 // get the i-th bit of number x, i starts from 0. if i starts from 1, change i to i - 1
 long getBit(long i, long x) {
-  return (x & (1 << i);
-  // or return (1 & (x >> i))
+  return (1 & (x >> i));
 }
 
 // set the i-th bit to value of number x, i starts from 0. if i starts from 1, change i to i - 1
