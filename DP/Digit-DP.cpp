@@ -1,3 +1,5 @@
+# Source: https://github.com/flash7even/Programming-Contest/tree/master/Code%20Repository/Dynamic%20Programming
+
 /// How many numbers x are there in the range a to b, where the digit d occurs exactly k times in x?
 
 #include <bits/stdc++.h>
