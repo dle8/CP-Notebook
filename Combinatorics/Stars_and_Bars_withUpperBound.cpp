@@ -3,10 +3,6 @@ Author: Dung Tuan Le
 University of Rochester
 */
 
-/*
-Tested: http://acm.hdu.edu.cn/showproblem.php?pid=6397
-*/
-
 #include <iostream>
 #define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define FOR(i, l, r) for (int i=l; i<=r; i++)
@@ -45,7 +41,7 @@ int main() {
   FOR(current_test, 1, test_cases) {
     cin >> n >> m >> k;
     ll res = 0;
-    FOR(i, 0, m) {
+    FOR(i, 0, m) { // so thg >= n
       if (n * i > k) break;
       ll sign = ((i % 2 == 0) ? 1 : -1);
       ll chooseGreater = mul(fact[m], mul(inverse[i], inverse[m - i]));
