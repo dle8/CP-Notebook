@@ -3,6 +3,10 @@ Author: Dung Tuan Le
 University of Rochester
 */
 
+/*
+Tested: https://codeforces.com/contest/505/problem/D
+*/
+
 #include <bits/stdc++.h>
 #define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define FOR(i, l, r) for (int i=l; i<=r; i++)
