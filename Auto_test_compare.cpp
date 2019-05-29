@@ -17,7 +17,9 @@ bool diff(string file1, string file2) {
 int main() {
   long sign[] = {-1, 1};
   FOR(current_test, 1, 100) {
-    srand(time(NULL));
+//     use rng instead of rand(). 
+//     for exp: generate an long n randomly: long n = rng();
+    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
     ofstream inp("input.txt");
 
     // input making goes here.
