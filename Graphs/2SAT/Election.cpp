@@ -23,8 +23,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define maxn 50 + 10
-pair<int, int> p1[maxn], p2[maxn];
+#define maxn 8000 + 10 + 10
 
 #define rep(i, a, b) for(int i = a; i < (b); ++i)
 #define trav(a, x) for(auto& a : x)
