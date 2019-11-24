@@ -23,31 +23,32 @@
 using namespace std;
 
 #define maxn 50 + 10
-pair<int, int> p1[maxn], p2[maxn];
+pair<ll, ll> p1[maxn], p2[maxn];
 
-#define rep(i, a, b) for(int i = a; i < (b); ++i)
+#define rep(i, a, b) for(ll i = a; i < (b); ++i)
 #define trav(a, x) for(auto& a : x)
-typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
 typedef pair<double, double> Point;
-typedef vector<int> vi;
+typedef vector<ll> vi;
+typedef long long ll;
 
 struct TwoSat {
-    int N;
+    ll N;
     vector<vi> gr;
     vi values; // 0 = fa lse , 1 = true
-    TwoSat(int n = 0) : N(n), gr(2 * n) {}
+    TwoSat(ll n = 0) : N(n), gr(2 * n) {}
 
-    void either(int f, int j) {
+    void either(ll f, ll j) {
         f = max(2 * f, -1 - 2 * f);
         j = max(2 * j, -1 - 2 * j);
         gr[f].push_back(j ^ 1);
         gr[j].push_back(f ^ 1);
     }
 
-    vi val, comp, z; int time = 0;
+    vi val, comp, z; ll time = 0;
 
-    int dfs(int i) {
-        int low = val[i] = ++time, x; z.push_back(i);
+    ll dfs(ll i) {
+        ll low = val[i] = ++time, x; z.push_back(i);
         trav(e, gr[i]) if (!comp[e]) low = min(low, val[e] ?: dfs(e));
         if (low == val[i]) do {
                 x = z.back(); z.pop_back();
@@ -67,34 +68,35 @@ struct TwoSat {
     }
 };
 
-ostream& operator<<(ostream& os, const Point &p) {
-    return os << p.first << " " << p.second;
-}
-
 bool overlap(Point l1, Point r1, Point l2, Point r2) {
     if (l1.first >= r2.first|| l2.first >= r1.first) return false;
     if (l1.second <= r2.second || l2.second <= r1.second) return false;
     return true;
 }
 
-bool overlap(pii pp1, pii pp2, int len) {
-    return overlap({double(pp1.first) - len / 2.0, double(pp1.second) + len / 2.0}, {double(pp1.first) + len / 2.0, double(pp1.second) - len / 2.0}, {double(pp2.first) - len / 2.0, double(pp2.second) + len / 2.0}, {double(pp2.first) + len / 2.0, double(pp2.second) - len / 2.0});
+bool overlap(pll pp1, pll pp2, ll len) {
+    return overlap(
+                {double(pp1.first) - len / 2.0, double(pp1.second) + len / 2.0},
+                {double(pp1.first) + len / 2.0, double(pp1.second) - len / 2.0},
+                {double(pp2.first) - len / 2.0, double(pp2.second) + len / 2.0},
+                {double(pp2.first) + len / 2.0, double(pp2.second) - len / 2.0}
+                );
 }
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(nullptr); cout.tie(nullptr);
-    int n; cin >> n;
-    for (int i = 1; i <= n; ++i) cin >> p1[i].first;
-    for (int i = 1; i <= n; ++i) cin >> p1[i].second;
-    for (int i = 1; i <= n; ++i) cin >> p2[i].first;
-    for (int i = 1; i <= n; ++i) cin >> p2[i].second;
+    ll n; cin >> n;
+    for (ll i = 1; i <= n; ++i) cin >> p1[i].first;
+    for (ll i = 1; i <= n; ++i) cin >> p1[i].second;
+    for (ll i = 1; i <= n; ++i) cin >> p2[i].first;
+    for (ll i = 1; i <= n; ++i) cin >> p2[i].second;
 
-    int left = 1, right = pow(10, 9);
+    ll left = 1, right = pow(10, 9);
     while (left <= right) {
-        int mid = (left + right) / 2;
+        ll mid = (left + right) / 2;
         TwoSat ts(n);
-        for (int i = 1; i <= n - 1; ++i) {
-            for (int j = i + 1; j <= n; ++j) {
+        for (ll i = 1; i <= n - 1; ++i) {
+            for (ll j = i + 1; j <= n; ++j) {
                 if (overlap(p1[i], p1[j], mid)) ts.either(~(i - 1), ~(j - 1));
                 if (overlap(p1[i], p2[j], mid)) ts.either(~(i - 1), j - 1);
                 if (overlap(p2[i], p1[j], mid)) ts.either(i - 1, ~(j - 1));
