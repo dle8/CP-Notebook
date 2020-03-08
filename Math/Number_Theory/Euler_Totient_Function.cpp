@@ -22,6 +22,7 @@ long eulerPhi(long n) {
 	return euler;
 }
 
+// a ^ φ(n) ≡ 1 (mod n) whenever (a,n) = 1
 
 /*
 Tested: https://www.spoj.com/problems/ETF/
