@@ -26,6 +26,8 @@
     log a base b:log_b(a) = log(a) / log(b)
 
     (int)floor(1 + log10((double)a)): number of digits in decimal number a
+ 
+    Goldbach's conjecture: Every even integer greater than 2 can be expressed as the sum of two primes (proven for all integers < 4 * 10^18)
 
  */
 
