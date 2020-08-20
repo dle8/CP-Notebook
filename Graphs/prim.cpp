@@ -4,6 +4,20 @@
     Created: 08/20/2020
 */
 
+/*
+    Tested: https://codeforces.com/group/FLVn1Sc504/contest/274711/problem/K
+*/
+
+/*
+    Prim first takes starting vertex, in this code it's 1, flags it as taken, and enqueues the pair of information into
+    the priority_queue: The weight w and the other end point u of the edge 1->u s.t u is not taken yet. These pairs
+    are sorted in the priority queue based on increasing weight, and if tie, by increasing vertex number. Prim then
+    greedily selects the pair (w, u) in front of the priority queue, which has the minimum weight w - if the end of this
+    edge - which is u - has not been taken before (this is to prevent cycle). If (w, u) is valid, add weight w into
+    the MST weight, mark u as taken, and add pairs (w', v) of each edge u->v with weight w' into the priority queue if
+    v has not been taken before.
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,6 +47,8 @@ int main() {
     vector<bool> taken(n + 1, false);
     vector<int> d(n + 1, inf);
     int tree_node = 0, w = 0;
+
+
     while (!pq.empty()) {
         pair<int, int> u = pq.top();
         pq.pop();
